@@ -3,7 +3,7 @@ Identifies wether intent of nouns is positive or negative in a sentnece.
 
 Below are few examples:
 
-**Input :**
+Input :
   I want coffee with no cream and extra sugar. 
 Output:
   negative list set ([(u'no',), (u'cream',)]) 
