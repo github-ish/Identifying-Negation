@@ -1,0 +1,50 @@
+# Identifying-Negation
+Identifies wether intent of nouns is positive or negative in a sentnece.
+
+Below are few examples:
+
+Input :
+  I want coffee with no cream and extra sugar. 
+Output:
+  negative list set ([(u'no',), (u'cream',)]) 
+  positive list set ([(u'coffee',), (u'I',), (u'extra',u'sugar')])
+Input:
+  I want coffee, but without any foam and cream
+
+Output:
+  negative list set ([(u'any', u'foam', u'and', u'cream'), (u'cream',), (u'any',), (u'and',), (u'foam',)])
+  positive list set ([(u'coffee',), (u'I',)])
+
+There are 2 files command.py and assignment.py 
+Need to run the file assignment.py
+Both of them have to be stored in same directory.
+The code uses NLTK package and Stanford parser.
+Wrapper for Stanford parser in python can be installed as follows:
+Details can be found on https://github.com/dasmith/stanford-corenlp-python 
+Both the code files need to be stored in the folder stanford-corenlp-python.
+
+Some parts of code can be configured using command line. 
+Below are the command line options:
+    • -h: print the help message
+    • -s ‘sentence’: Analyses the given sentence assuming a default list
+    of negative words
+    • -n: specifies that a file needs to be used to get new list of
+    negative words. File needs to be provided with –f option. This
+    option needs to be accompanies with –f option.
+    • -f File name: specifies the file from which a list of negative words
+    can be read
+    • -l: specifies to use a file to read a list of sentences to be
+    ananlysed.
+    • -t File Name: specifies the file containing the list of sentences
+    
+Have also provided two sample files – one for negative words(file.txt) and other for sentences (sentences.txt)
+
+Commands:
+    • python assignment.py –h – displays help msg
+    • python assignment.py –s “I would like to test this sentence.” –
+    analyses the given sentence using default negative word list.
+    • Python assignment.py –l –t sentences.txt – analyses all the sentences in
+    the given file using default negative word list.
+    • Python assignment.py –n –f file.txt –s” I would like to test this sentence.” -– analyses the given sentence using the word list in file.txt
+    • Python assignment.py –n –f file.txt –l –t sentences.txt - analyses all the sentences in the given file using the word list in file.txt
+    The code might take time to run due to loading of all corenlp Stanford modules.
